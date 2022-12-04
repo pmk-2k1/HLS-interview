@@ -38,4 +38,4 @@ for ($i = 0; $i < 5; $i++) {
 echo "\n";
 echo "smallest value in array: ".$min . "\n"    // min in array
     ."largest value in array: ". $max . "\n"    // max in array
-    ."sum of values in array: ". "$sum";        // total of array
+    ."sum of values in array: ". "$sum". "\n";        // total of array
