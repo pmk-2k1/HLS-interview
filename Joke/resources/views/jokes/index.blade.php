@@ -8,7 +8,7 @@
         </div>
 
         @foreach ($jokes as $joke)
-            @if ($joke->funny == 0 || $joke->not_funny == 0)
+            @if ($joke->funny == 0 && $joke->not_funny == 0)
                 <div class="div_content ani">
                     <p class="content">{{ $joke->content }}</p>
                 </div>
@@ -17,18 +17,18 @@
 
         <div class="form_vote">
             <hr>
-
-            <button type="button" onclick="plusDivs(1)" class="funny">This is Funny!</button>
-            <button type="button" onclick="plusDivs(1)" class="not_funny">This is not funny.</button>
-
+            @foreach ($jokes as $joke)
+            <button type="button" onclick="plusDivs()" class="funny" >This is Funny! </button>
+            <button type="button" onclick="plusDivs()" class="not_funny">This is not Funny!</button>
+            @endforeach
         </div>
     </div>
     <script>
         var slideIndex = 1;
         showDivs(slideIndex);
 
-        function plusDivs(n) {
-            showDivs((slideIndex += n));
+        function plusDivs() {
+            showDivs((slideIndex += 1));
         }
 
         function showDivs(n) {
